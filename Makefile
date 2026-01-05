@@ -27,8 +27,7 @@ all_tags: tag1 tag2 tag3
 ECHO = echo "AABBCC"
 TARGET = 変数の代入と参照
 ${TARGET}:
-# $(shell コマンド)でシェルの実行結果を取得
-	$(ECHO)
+	${ECHO}
 
 STR = AA
 STR := ${STR}BBCC
@@ -50,6 +49,11 @@ STR2 += CC
 
 依存ファイルリストに置き換わる: first tag1
 	echo $^
+
+# シェルの実行結果を取得する
+LS=$(shell ls)
+シェルの実行結果を取得する:
+	@echo ${LS}
 
 # コマンド行の制御
 コマンド表示の抑止:
