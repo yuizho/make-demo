@@ -26,22 +26,23 @@ all_tags: tag1 tag2 tag3
 # 変数
 ECHO = echo "AABBCC"
 TARGET = 変数の代入と参照
-$(TARGET):
+${TARGET}:
+# $(shell コマンド)でシェルの実行結果を取得
 	$(ECHO)
 
 STR = AA
-STR := $(STR)BBCC
+STR := ${STR}BBCC
 再帰的代入を考慮した代入:
-	echo "$(STR)"
+	echo "${STR}"
 
 STR2 = AA
 STR2 += BB
 STR2 += CC
 変数へ追加:
-	echo "$(STR2)"
+	echo "${STR2}"
 
 環境変数の参照:
-	echo "$(LANG)"
+	echo "${LANG}"
 
 # 内部変数
 ターゲットに置き換わる:
