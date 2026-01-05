@@ -74,3 +74,8 @@ MSG = "奇数"
 endif
 条件判断:
 	@echo "${MSG}"
+
+# includeでファイルを読み込む
+include flg.mk
+includeでファイルを読み込む:
+	@echo ${SHOW}
