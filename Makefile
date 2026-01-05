@@ -60,3 +60,13 @@ STR2 += CC
 	@echo "コマンドの頭に-をつけるとエラーでも処理が続く"
 	-@rmdir dirtest
 	@echo "-@と言うように@を組み合わせて連続で使うこともできる"
+
+# 条件判断
+NUM = $(shell shuf -i 1-2 -n 1)
+ifeq (${NUM}, 2)
+MSG = "偶数"
+else
+MSG = "奇数"
+endif
+条件判断:
+	@echo "${MSG}"
