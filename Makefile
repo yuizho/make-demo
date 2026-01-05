@@ -23,6 +23,26 @@ tag3:
 
 all_tags: tag1 tag2 tag3
 
+# 変数
+ECHO = echo "AABBCC"
+TARGET = 変数の代入と参照
+$(TARGET):
+	$(ECHO)
+
+STR = AA
+STR := $(STR)BBCC
+再帰的代入を考慮した代入:
+	echo "$(STR)"
+
+STR2 = AA
+STR2 += BB
+STR2 += CC
+変数へ追加:
+	echo "$(STR2)"
+
+環境変数の参照:
+	echo "$(LANG)"
+
 # コマンド行の制御
 コマンド表示の抑止:
 	@echo "@をつけてコマンドを実行するとコマンド実行そのものの表示を抑止できる"
